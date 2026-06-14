@@ -1,13 +1,19 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles.css";
 
-// AI agents: read README.md for navigation and contribution guidance.
-const container = document.getElementById("root");
+// Import sonner for toast notifications
+import { Toaster } from "sonner";
 
-if (!container) {
-  throw new Error("Root element not found");
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+      <Toaster position="top-right" richColors closeButton />
+    </React.StrictMode>
+  );
 }
-
-createRoot(container).render(<App />);
