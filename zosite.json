@@ -1,0 +1,15 @@
+{
+  "name": "ebola-emergency-support",
+  "local_port": 52901,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "ebola-emergency-support",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 53058,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}
